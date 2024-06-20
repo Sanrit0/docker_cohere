@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Texto</title>
+    <style>
+        /* Estilo para hacer más grande el campo de texto */
+        #inputText {
+            width: 80%; /* Ajusta el ancho a 80% del contenedor */
+            height: 40px; /* Ajusta la altura del campo de texto */
+            font-size: 16px; /* Ajusta el tamaño de la fuente */
+        }
+        /* Estilo para el campo de texto mostrado */
+        #displayText {
+            width: 80%;
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Consulta a nuestra inteligencia artificial</h1>
+    <form action="/submit" method="post">
+        <label for="inputText">Consulta:</label>
+        <input type="text" id="inputText" name="inputText" size="100">
+        <button type="submit">Enviar</button>
+    </form>
+    {% if display_text is not none %}
+        <div id="displayText">{{ display_text | safe }}</div>
+    {% endif %}
+</body>
+</html>
