@@ -55,7 +55,7 @@ def index():
 def submit():
     input_text = request.form['inputText']
     
-    co = cohere.Client("N4EIFjMurRT4QGpcH5MViDIOtCuXAlFjDALgCfTV")
+    co = cohere.Client("api-key")
     response = co.chat(
 	message=input_text,
     max_tokens=100
